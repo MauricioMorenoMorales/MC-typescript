@@ -123,3 +123,45 @@ type Vehiculo2 = {
 type VehiculoTerrestre2 = Vehiculo & {
 	conducir(): void
 }
+
+//! Interfaces indizadas
+
+let vector: number[] = []
+
+vector[0]
+
+let object: Account = {
+	displayName: 'foo',
+	rpDisplayName: 'foo',
+	id: '1',
+}
+
+object.displayName = 'xd'
+
+let h = object['displayName']
+
+interface Indizable {
+	[index: number]: boolean
+}
+
+let indizable: Indizable = {}
+
+let indizableNoSeQue = l[4]
+
+//! Interfaces: funciones y tipos hibridos
+
+type Comparator = (a: string, b: string) => number
+
+interface ComparatorInterface {
+	(first: string, second: string): number
+	algorithm: string
+	safe: boolean
+}
+
+function sort(c: ComparatorInterface) {
+	let out = c('first', 'second')
+	//Obtiene autocompletado de funciones
+	//Ademas obtiene los atributos de la interface
+	//? c.
+	console.log(`Ordenando con el criterio ${c.algorithm}`)
+}
