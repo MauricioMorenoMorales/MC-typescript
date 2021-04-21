@@ -69,3 +69,57 @@ class Rectangle implements Shape {
 }
 
 let miRectangulo = new Rectangle(1, 2)
+
+//! Herencia de interfaces
+
+interface Vehiculo {
+	fabricante: string
+	arrancar(): void
+	repostar(): void
+	detenerMotor(): void
+}
+
+interface VehiculoTerrestre extends Vehiculo {
+	conducir(): void
+}
+interface VehiculoMaritimo extends Vehiculo {
+	sonarSirena(): void
+	encenderChimienea(): void
+	detenerChimenea(): void
+}
+
+class OpelCorsa extends VehiculoTerrestre {
+	fabricante: string = 'Opel'
+	arrancar(): void {
+		console.log('brumsmsdkmoakmfsd')
+	}
+	repostar(): void {
+		console.log('Echando gasolina')
+	}
+	detenerMotor(): void {
+		console.log('    ')
+	}
+	conducir(): void {
+		console.log('brum brum')
+	}
+	abrirMaletero(): void {
+		return
+	}
+}
+
+function procesar(v: VehiculoMaritimo) {
+	v.encenderChimienea()
+}
+
+procesar(new VehiculoMaritimo())
+
+type Vehiculo2 = {
+	fabricante: string
+	arrancar(): void
+	repostar(): void
+	detenerMotor(): void
+}
+
+type VehiculoTerrestre2 = Vehiculo & {
+	conducir(): void
+}
