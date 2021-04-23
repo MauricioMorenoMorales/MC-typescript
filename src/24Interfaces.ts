@@ -31,7 +31,7 @@ function login(): userData {
 let data: userData = login()
 
 //Inseguro
-data.created_at.getTime
+//? data.created_at.getTime
 //Seguro
 if (data.created_at) {
 	data.created_at.toISOString()
@@ -146,7 +146,7 @@ interface Indizable {
 
 let indizable: Indizable = {}
 
-let indizableNoSeQue = l[4]
+//! let indizableNoSeQue = l[4]
 
 //! Interfaces: funciones y tipos hibridos
 
@@ -165,3 +165,23 @@ function sort(c: ComparatorInterface) {
 	//? c.
 	console.log(`Ordenando con el criterio ${c.algorithm}`)
 }
+
+//! Diferencia entre interfaces y tipos
+
+interface X {
+	a: string
+}
+interface X {
+	b: string
+}
+interface X {
+	c: string
+}
+
+function use(x: X) {
+	return x.a + x.b + x.c
+}
+
+// function myWindow(w: Window) {
+// 	w.addEventListener('click', use())
+// }
