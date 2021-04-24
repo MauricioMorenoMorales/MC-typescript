@@ -8,8 +8,8 @@ type LoginCredentials = {
 	remenber?: boolean
 }
 
-function login(data: LoginCredentials) {
+function login2(data: LoginCredentials) {
 	console.log(data.password)
 }
 
-login({ username: 'admin', password: '12345' })
+login2({ username: 'admin', password: '12345' })
