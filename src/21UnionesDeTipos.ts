@@ -7,7 +7,7 @@ type B = {
 	cuatro: boolean
 }
 
-let valor: A | B = { cuatro: false, tres: true }
+let valor: A | B = {cuatro: false, tres: true }
 
 function convertir(valor: string | number) {
 	if (typeof valor === 'string') {
